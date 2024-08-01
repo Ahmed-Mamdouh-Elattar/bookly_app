@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/font_style.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/horizontal_book_list.dart';
 
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_appbar.dart';
@@ -19,6 +20,13 @@ class HomeViewBody extends StatelessWidget {
             height: 40,
           ),
           HorizontalBookList(),
+          SizedBox(
+            height: 40,
+          ),
+          Text(
+            "Best Seller",
+            style: FontStyle.titleMedium,
+          ),
         ],
       ),
     );
