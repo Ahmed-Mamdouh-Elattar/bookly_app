@@ -9,7 +9,7 @@ class CustomTextAnimation extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
       curve: Curves.bounceInOut,
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 3),
       tween: ColorTween(
         begin: Colors.transparent,
         end: Colors.white70,

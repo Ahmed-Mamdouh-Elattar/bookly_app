@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/core/utils/font_style.dart';
+import 'package:bookly_app/core/utils/app_style.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_price.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
@@ -43,14 +43,14 @@ class BestSellerListViewItem extends StatelessWidget {
                   'The Jungle Book',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: FontStyle.textStyle20,
+                  style: AppStyle.textStyle20,
                 ),
                 const SizedBox(
                   height: 4,
                 ),
                 Text(
                   'Rudyard Kipling',
-                  style: FontStyle.textStyle14.copyWith(
+                  style: AppStyle.textStyle14.copyWith(
                     color: Colors.white.withOpacity(0.7),
                   ),
                 ),

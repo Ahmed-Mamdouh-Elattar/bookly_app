@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/utils/font_style.dart';
+import 'package:bookly_app/core/utils/app_style.dart';
 
 import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_sliver_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/horizontal_book_list.dart';
@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
                 ),
                 Text(
                   "Best Seller",
-                  style: FontStyle.textStyle18,
+                  style: AppStyle.textStyle18,
                 ),
                 SizedBox(
                   height: 18,

@@ -26,6 +26,9 @@ class _SplashViewBodeyState extends State<SplashViewBodey> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Image.asset(Assets.logo),
+          const SizedBox(
+            height: 8,
+          ),
           const CustomTextAnimation(),
         ]);
   }

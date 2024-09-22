@@ -1,7 +1,7 @@
 import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 
-abstract class FontStyle {
+abstract class AppStyle {
   static const textStyle18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
