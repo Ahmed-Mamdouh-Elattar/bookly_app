@@ -35,6 +35,7 @@ class _SplashViewBodeyState extends State<SplashViewBodey> {
 
   Future<Null> navigateToHomeView() {
     return Future.delayed(const Duration(seconds: 3), () {
+      // ignore: use_build_context_synchronously
       GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
     });
   }
