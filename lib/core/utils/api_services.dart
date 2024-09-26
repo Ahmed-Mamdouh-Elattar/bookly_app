@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiServices {
   final String _baseUrl;
-  Dio _dio;
+  final Dio _dio;
   ApiServices(Dio dio, {required String baseUrl})
       : _baseUrl = baseUrl,
         _dio = dio;
