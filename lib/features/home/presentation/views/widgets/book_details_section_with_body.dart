@@ -13,7 +13,10 @@ class BookDetailsWithButtonSection extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.45,
-          child: const HorizontalBookListItem(),
+          child: const HorizontalBookListItem(
+            imgUrll:
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeI00967LtKfjFtI4oyGwdu3Alh_KQQUzv8g&s',
+          ),
         ),
         const SizedBox(
           height: 45,

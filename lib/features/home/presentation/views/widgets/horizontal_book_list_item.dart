@@ -1,22 +1,22 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalBookListItem extends StatelessWidget {
   const HorizontalBookListItem({
     super.key,
+    required this.imgUrll,
   });
-
+  final String imgUrll;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 0.66,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          image: const DecorationImage(
-            fit: BoxFit.fill,
-            image: NetworkImage(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeI00967LtKfjFtI4oyGwdu3Alh_KQQUzv8g&s'),
-          ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl: imgUrll,
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );

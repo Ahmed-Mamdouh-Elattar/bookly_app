@@ -38,7 +38,10 @@ class RelatedBookList extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.only(right: 10),
-            child: HorizontalBookListItem(),
+            child: HorizontalBookListItem(
+              imgUrll:
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeI00967LtKfjFtI4oyGwdu3Alh_KQQUzv8g&s',
+            ),
           );
         },
       ),
