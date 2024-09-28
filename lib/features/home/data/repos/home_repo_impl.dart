@@ -41,7 +41,8 @@ class HomeRepoImpl implements HomeRepo {
     } on DioException catch (e) {
       return left(ServerFailure.fromDioError(e));
     } catch (e) {
-      return left(ServerFailure(errMessage: e.toString()));
+      return left(
+          ServerFailure(errMessage: "Unexpected error ,please try again"));
     }
   }
 }

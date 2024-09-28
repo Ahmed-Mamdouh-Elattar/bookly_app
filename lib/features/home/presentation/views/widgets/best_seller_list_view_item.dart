@@ -1,13 +1,15 @@
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/app_style.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_price.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/horizontal_book_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
+  const BestSellerListViewItem({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,18 +20,8 @@ class BestSellerListViewItem extends StatelessWidget {
         children: [
           SizedBox(
             height: 114,
-            child: AspectRatio(
-              aspectRatio: 0.64,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeI00967LtKfjFtI4oyGwdu3Alh_KQQUzv8g&s'),
-                  ),
-                ),
-              ),
+            child: HorizontalBookListItem(
+              imgUrll: book.volumeInfo!.imageLinks!.smallThumbnail!,
             ),
           ),
           const SizedBox(
@@ -39,8 +31,8 @@ class BestSellerListViewItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'The Jungle Book',
+                Text(
+                  book.volumeInfo!.title!,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: AppStyle.textStyle20,
@@ -49,7 +41,9 @@ class BestSellerListViewItem extends StatelessWidget {
                   height: 4,
                 ),
                 Text(
-                  'Rudyard Kipling',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  book.volumeInfo?.authors?[0] ?? "Not mentioned",
                   style: AppStyle.textStyle14.copyWith(
                     color: Colors.white.withOpacity(0.7),
                   ),
@@ -57,14 +51,17 @@ class BestSellerListViewItem extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                const Row(
+                Row(
                   children: [
-                    BookPrice(),
-                    Spacer(
+                    const BookPrice(),
+                    const Spacer(
                       flex: 1,
                     ),
-                    BookRating(),
-                    Spacer(
+                    BookRating(
+                      rating: book.volumeInfo?.averageRating ?? 0,
+                      count: book.volumeInfo?.ratingsCount ?? 0,
+                    ),
+                    const Spacer(
                       flex: 1,
                     ),
                   ],

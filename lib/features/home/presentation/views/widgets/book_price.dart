@@ -11,12 +11,8 @@ class BookPrice extends StatelessWidget {
     return const Row(
       children: [
         Text(
-          '19.99',
+          'Free',
           style: AppStyle.textStyle15,
-        ),
-        Icon(
-          Icons.euro,
-          size: 18,
         ),
       ],
     );
