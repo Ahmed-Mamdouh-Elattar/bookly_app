@@ -8,10 +8,12 @@ class CustomButton extends StatelessWidget {
     required this.textColor,
     required this.borderRadius,
     this.onPressed,
+    required this.text,
   });
   final Color backgroundColor, textColor;
   final BorderRadiusGeometry borderRadius;
   final void Function()? onPressed;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -25,7 +27,7 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           child: Text(
-            '19.99€',
+            text,
             style: AppStyle.textStyle15.copyWith(
               color: textColor,
               fontWeight: FontWeight.bold,
