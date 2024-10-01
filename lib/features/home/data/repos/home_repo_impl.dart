@@ -45,4 +45,23 @@ class HomeRepoImpl implements HomeRepo {
           ServerFailure(errMessage: "Unexpected error ,please try again"));
     }
   }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      var data = await _apiServices.get(
+          endpoint: "volumes?q=$category &filter=free-ebooks");
+      List<BookModel> bookModel = [];
+      for (var item in data["items"]) {
+        bookModel.add(BookModel.fromJson(item));
+      }
+      return right(bookModel);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      return left(
+          ServerFailure(errMessage: "Unexpected error ,please try again"));
+    }
+  }
 }
