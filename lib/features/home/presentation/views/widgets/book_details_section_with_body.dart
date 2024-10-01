@@ -5,6 +5,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.
 import 'package:bookly_app/features/home/presentation/views/widgets/horizontal_book_list_item.dart';
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class BookDetailsWithButtonSection extends StatelessWidget {
   const BookDetailsWithButtonSection({super.key, required this.book});
   final BookModel book;
@@ -54,7 +56,7 @@ class BookDetailsWithButtonSection extends StatelessWidget {
                 text: "Free",
                 backgroundColor: Colors.white,
                 textColor: Colors.black,
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(15),
                   bottomLeft: Radius.circular(15),
                 ),
@@ -62,7 +64,9 @@ class BookDetailsWithButtonSection extends StatelessWidget {
             ),
             Expanded(
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  customlaunchUrl(url: book.accessInfo!.webReaderLink!);
+                },
                 text: "Preview",
                 backgroundColor: const Color(0xffef8262),
                 textColor: Colors.white,
@@ -76,5 +80,12 @@ class BookDetailsWithButtonSection extends StatelessWidget {
         )
       ],
     );
+  }
+
+  Future<void> customlaunchUrl({required String url}) async {
+    final Uri urlLauncher = Uri.parse(url);
+    if (await canLaunchUrl(urlLauncher)) {
+      launchUrl(urlLauncher);
+    }
   }
 }
