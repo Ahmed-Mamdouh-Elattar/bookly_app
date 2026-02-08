@@ -8,9 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 void main() {
   setupServiceLocator();
   runApp(
-    DevicePreview(
-      builder: (context) => const BooklyApp(), // Wrap your app
-    ),
+    const BooklyApp(),
   );
 }
 
