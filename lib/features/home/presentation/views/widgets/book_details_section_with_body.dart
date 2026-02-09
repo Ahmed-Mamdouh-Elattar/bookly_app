@@ -1,8 +1,8 @@
 import 'package:bookly_app/core/utils/app_style.dart';
+import 'package:bookly_app/core/widgets/book_rating.dart';
+import 'package:bookly_app/core/widgets/custom_book_image.dart';
 import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/horizontal_book_list_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -16,7 +16,7 @@ class BookDetailsWithButtonSection extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.45,
-          child: HorizontalBookListItem(
+          child: CustomBookImage(
             imgUrll: book.volumeInfo?.imageLinks?.thumbnail ?? "",
           ),
         ),

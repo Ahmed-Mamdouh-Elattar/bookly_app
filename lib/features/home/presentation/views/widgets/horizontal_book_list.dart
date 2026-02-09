@@ -1,8 +1,8 @@
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/core/widgets/custom_book_image.dart';
 import 'package:bookly_app/core/widgets/custom_error.dart';
 import 'package:bookly_app/core/widgets/custom_progress_indicator.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/horizontal_book_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +32,7 @@ class HorizontalBookList extends StatelessWidget {
                       context.push(AppRouter.kBookDetailsView,
                           extra: state.books[index]);
                     },
-                    child: HorizontalBookListItem(
+                    child: CustomBookImage(
                       imgUrll:
                           state.books[index].volumeInfo!.imageLinks!.thumbnail!,
                     ),

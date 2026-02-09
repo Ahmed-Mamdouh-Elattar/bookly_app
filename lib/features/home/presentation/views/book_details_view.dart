@@ -15,8 +15,13 @@ class BookDetailsView extends StatefulWidget {
 class _BookDetailsViewState extends State<BookDetailsView> {
   @override
   void initState() {
+    String category = 'programming'; // default fallback
+    if (widget.book.volumeInfo?.categories != null &&
+        widget.book.volumeInfo!.categories!.isNotEmpty) {
+      category = widget.book.volumeInfo!.categories![0];
+    }
     BlocProvider.of<SimilarBooksCubit>(context)
-        .fetchSimilarBooks(category: widget.book.volumeInfo!.categories![0]);
+        .fetchSimilarBooks(category: category);
     super.initState();
   }
 
