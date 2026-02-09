@@ -36,7 +36,7 @@ class BookDetailsWithButtonSection extends StatelessWidget {
         Text(
           book.volumeInfo?.authors?[0] ?? "",
           style: AppStyle.textStyle18
-              .copyWith(color: Colors.white.withOpacity(0.7)),
+              .copyWith(color: Colors.white.withValues(alpha: 0.7)),
           textAlign: TextAlign.center,
         ),
         const SizedBox(

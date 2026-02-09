@@ -29,7 +29,7 @@ class BookRating extends StatelessWidget {
         Text(
           '($count)',
           style: AppStyle.textStyle14.copyWith(
-            color: Colors.white.withOpacity(0.5),
+            color: Colors.white.withValues(alpha: 0.5),
           ),
         ),
       ],

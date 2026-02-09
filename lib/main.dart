@@ -1,4 +1,4 @@
-import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/helper/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/service_locator.dart';
 import 'package:device_preview/device_preview.dart';

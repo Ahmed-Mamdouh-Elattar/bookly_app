@@ -45,7 +45,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   book.volumeInfo?.authors?[0] ?? "Not mentioned",
                   style: AppStyle.textStyle14.copyWith(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                   ),
                 ),
                 const SizedBox(
